@@ -199,6 +199,7 @@ prebuild gc ARM auto
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;HAVE_CONFIG_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>MinSpace</Optimization>
     </ClCompile>
     <PostBuildEvent>
       <Command>cd ..\..\build.vc

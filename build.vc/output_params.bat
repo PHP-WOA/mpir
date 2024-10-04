@@ -1,4 +1,4 @@
-(set ldir=dll_mpir_gc\)   
-(set libr=dll) 
-(set plat=ARM64) 
+(set ldir=lib_mpir_gc\)   
+(set libr=lib) 
+(set plat=ARM) 
 (set conf=Release) 

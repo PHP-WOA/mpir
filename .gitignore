@@ -1,0 +1,15 @@
+.vs
+*.user
+x64
+x86
+Win32
+ARM
+ARM64
+/lib
+/dll
+/config.h
+/gmp.h
+/gmp-mparam.h
+/longlong.h
+/mpir.h
+test-config.props

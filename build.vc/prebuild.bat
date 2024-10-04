@@ -3,7 +3,15 @@ rem %1 = mpn directory (generic, x86\... or x86_64\...)
 rem %2 = platform (win32 or x64)
 rem %3 = MSVC version number (e.g. 14)
 
-if /i "%2" EQU "win32" ((set platform=win32) & (set bdir=x86w\)) else ((set platform=x64) & (set bdir=x86_64w\))
+if /i "%2" EQU "win32" (
+(set platform=win32) & (set bdir=x86w\)
+) else if /i "%2" EQU "x64" (
+(set platform=x64) & (set bdir=x86_64w\)
+) else if /i "%2" EQU "ARM" (
+(set platform=ARM) & (set bdir=armw\)
+) else if /i "%2" EQU "ARM64" (
+(set platform=ARM64) & (set bdir=arm64w\)
+)
 set sdir=
 if /i "%1" EQU "gc" ((set sdir=generic) & (set bdir=generic)) else (set sdir=%bdir%%1)
 if not exist ..\mpn\%sdir% (call :seterr & echo ERROR: %1 is not supported & exit /b %errorlevel%)

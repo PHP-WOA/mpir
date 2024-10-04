@@ -74,6 +74,11 @@ if "%4" EQU "dll" (
         copy %1mpirxx.lib %2mpirxx.lib > nul 2>&1
 	    if exist %1mpirxx.pdb (copy %1mpirxx.pdb %2mpirxx.pdb > nul 2>&1)
         )
+    ) else if "%5" EQU "mpir_a" (
+	    if exist %1mpir_a.lib (
+        copy %1mpir_a.lib %2mpir_a.lib > nul 2>&1
+	    if exist %1mpir_a.pdb (copy %1mpir_a.pdb %2mpir_a.pdb > nul 2>&1)
+        )
     )
 ) else (
 	call :seterr & echo ERROR: illegal library type %4  & exit /b %errorlevel%
